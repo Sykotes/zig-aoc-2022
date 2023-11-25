@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub fn day1() !void {
+pub fn day1_part1() !void {
     const file = try std.fs.cwd().openFile("input_files/day1.txt", .{ .mode = .read_only });
     defer file.close();
 
@@ -24,4 +24,17 @@ pub fn day1() !void {
         }
     }
     std.debug.print("Hello, world! (max: {})\n", .{max});
+}
+
+pub fn day1_part2() !void {
+    const file = try std.fs.cwd().openFile("input_files/day1.txt", .{ .mode = .read_only });
+    defer file.close();
+
+    var buf_reader = std.io.bufferedReader(file.reader());
+    const in_stream = buf_reader.reader();
+
+    var buffer: [1024]u8 = undefined;
+    while (try in_stream.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
+        _ = line;
+    }
 }
