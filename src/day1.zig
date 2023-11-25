@@ -8,12 +8,20 @@ pub fn day1() !void {
     const in_stream = buf_reader.reader();
 
     var number: u32 = 0;
-    var total: u32 = 0;
+    var elf_total: u32 = 0;
+    var max: u32 = 0;
 
     var buffer: [1024]u8 = undefined;
     while (try in_stream.readUntilDelimiterOrEof(&buffer, '\n')) |line| {
         number = std.fmt.parseInt(u32, line, 10) catch 0;
-        total += number;
+        if (number > 0) {
+            elf_total += number;
+        } else {
+            if (elf_total > max) {
+                max = elf_total;
+            }
+            elf_total = 0;
+        }
     }
-    std.debug.print("Hello, world! (total: {})\n", .{total});
+    std.debug.print("Hello, world! (max: {})\n", .{max});
 }
