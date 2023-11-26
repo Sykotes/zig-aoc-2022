@@ -1,4 +1,5 @@
 const std = @import("std");
+
 pub fn day2_part1() !void {
     const file = try std.fs.cwd().openFile("input_files/day2.txt", .{ .mode = .read_only });
     defer file.close();
