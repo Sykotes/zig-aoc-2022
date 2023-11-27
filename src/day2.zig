@@ -39,7 +39,7 @@ pub fn day2_part1() !void {
             score += 6;
         }
     }
-    std.debug.print("Score: {}\n", .{score});
+    std.debug.print("Day2 Part1) Score: {}\n", .{score});
 }
 
 pub fn day2_part2() !void {
@@ -49,9 +49,9 @@ pub fn day2_part2() !void {
     var buf_reader = std.io.bufferedReader(file.reader());
     const in_stream = buf_reader.reader();
 
-    const lose = 1;
-    const draw = 2;
-    const win = 3;
+    const lose: u8 = 1;
+    const draw: u8 = 2;
+    const win: u8 = 3;
 
     const rock: u8 = 1;
     const paper: u8 = 2;
@@ -114,5 +114,5 @@ pub fn day2_part2() !void {
             else => {},
         }
     }
-    std.debug.print("Score: {}\n", .{score});
+    std.debug.print("Day2 Part2) Score: {}\n", .{score});
 }

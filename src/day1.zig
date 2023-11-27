@@ -23,7 +23,7 @@ pub fn day1_part1() !void {
             elf_total = 0;
         }
     }
-    std.debug.print("Highest: {}\n", .{max});
+    std.debug.print("Day1 Part1) Highest: {}\n", .{max});
 }
 
 pub fn day1_part2() !void {
@@ -64,5 +64,5 @@ pub fn day1_part2() !void {
         }
     }
     const top3_total = top1 + top2 + top3;
-    std.debug.print("Total of top 3: {}\n", .{top3_total});
+    std.debug.print("Day1 Part2)Total of top 3: {}\n", .{top3_total});
 }
