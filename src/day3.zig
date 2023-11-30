@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub fn day3_part1() !void {
+pub fn part1() !void {
     const file = try std.fs.cwd().openFile("input_files/day3.txt", .{ .mode = .read_only });
     defer file.close();
 
@@ -17,10 +17,8 @@ pub fn day3_part1() !void {
         first_half = line[0 .. line.len / 2];
         second_half = line[line.len / 2 .. line.len];
 
-        outer: for (first_half, 0..) |c1, i| {
-            _ = i;
-            for (second_half, 0..) |c2, j| {
-                _ = j;
+        outer: for (first_half) |c1| {
+            for (second_half) |c2| {
                 if (c1 == c2) {
                     if (c1 >= 'a') {
                         count += c1 - 'a';

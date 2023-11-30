@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub fn day1_part1() !void {
+pub fn part1() !void {
     const file = try std.fs.cwd().openFile("input_files/day1.txt", .{ .mode = .read_only });
     defer file.close();
 
@@ -26,7 +26,7 @@ pub fn day1_part1() !void {
     std.debug.print("Day1 Part1) Highest: {}\n", .{max});
 }
 
-pub fn day1_part2() !void {
+pub fn part2() !void {
     const file = try std.fs.cwd().openFile("input_files/day1.txt", .{ .mode = .read_only });
     defer file.close();
 

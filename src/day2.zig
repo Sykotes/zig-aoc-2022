@@ -1,6 +1,6 @@
 const std = @import("std");
 
-pub fn day2_part1() !void {
+pub fn part1() !void {
     const file = try std.fs.cwd().openFile("input_files/day2.txt", .{ .mode = .read_only });
     defer file.close();
 
@@ -42,7 +42,7 @@ pub fn day2_part1() !void {
     std.debug.print("Day2 Part1) Score: {}\n", .{score});
 }
 
-pub fn day2_part2() !void {
+pub fn part2() !void {
     const file = try std.fs.cwd().openFile("input_files/day2.txt", .{ .mode = .read_only });
     defer file.close();
 
